@@ -18,6 +18,8 @@ public class VendingMachineCLI extends VendingMachine{
 
 	private VendingMachine options = new VendingMachine();
 
+	private Purchase purchase = new Purchase(new Menu(System.in, System.out), options); // This allows us to access Purchase class.
+
 	public VendingMachineCLI(Menu menu) {
 		this.menu = menu;
 	}
@@ -28,27 +30,13 @@ public class VendingMachineCLI extends VendingMachine{
 
 			if (choice.equals(MAIN_MENU_OPTION_DISPLAY_ITEMS)) {
 				//display item list;
-
-				File file = new File("C:\\Users\\Student\\workspace\\oct-blue-capstone-1-team-3\\capstone\\vendingmachine.csv");
-
-				try(Scanner fileReader = new Scanner(file)){
-
-					while(fileReader.hasNextLine()){
-
-						String line = fileReader.nextLine();
-
-							System.out.println(line);
-
-					}
-
-
-				}catch(Exception ex) {
-					System.out.println("File not found");
-				}
+				options.display();
 
 			} else if (choice.equals(MAIN_MENU_OPTION_PURCHASE)) {
 				// do purchase
+				purchase.run();
 			}else {
+				System.out.println("Thank you for using the: Vendo-Matic 800 and supporting UMBRELLA CORP! We hope to see you again!");
 				break;
 			}
 		}
