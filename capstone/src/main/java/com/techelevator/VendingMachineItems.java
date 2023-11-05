@@ -5,7 +5,7 @@ import com.techelevator.view.Menu;
 import java.util.HashMap;
 import java.util.Map;
 
-public class VendingMachineItems extends VendingMachine {
+public class VendingMachineItems {
 //PRIVATE VARIABLES
     private String name;
 
@@ -18,7 +18,7 @@ public class VendingMachineItems extends VendingMachine {
     private String slot;
 
 //CONSTRUCTOR
-    public void VendingMachineItems(String name, double price,String type, int quantity, String slot){
+    public VendingMachineItems( String slot , String name, double price,String type, int quantity){
     this.name = name; //name of item
     this.price = price; //price of item
     this.type = type; // type of item "GUM, Chips, Drink"
